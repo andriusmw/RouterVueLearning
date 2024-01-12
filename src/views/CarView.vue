@@ -14,7 +14,7 @@
 </script>
 
 <template>
-    <div>
+    <div v-if="car">
         <h1>Car view</h1>
         <p>{{car.name}}</p>
         <p>{{car.year}}</p>
@@ -22,5 +22,9 @@
         <button @click="router.push(`/cars/${carId}/contact`)">Click me for contact</button>
         <RouterView />
         <!-- RouterView hace visibles los componentes anidados en rutas -->
+    </div>
+
+    <div v-else>
+        <h1>Car not found</h1>
     </div>
 </template>
